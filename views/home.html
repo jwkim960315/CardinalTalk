@@ -17,9 +17,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
-
-
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="../public/home.css">
 
@@ -43,23 +40,25 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Catalog <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/catalog">Catalog <span class="sr-only">(current)</span></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
     <!-- Search Form -->
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-xs-push-3">
-                <form action="/filter" method="GET">
-                    <input type="text" placeholder="Course Code" name="course_code">
-                    <button type="submit">Search</button>
-                </form>
+    <form class="form-horizontal" action="/filter" method="GET">
+        <div class="form-group">
+            <div class="col-xs-10">
+                <input type="text" class="form-control" name="course_code" placeholder="Course Code">
+            </div>
+            <div class="col-xs-2">
+                <button type="submit" class="btn btn-inverse">Search</button>
             </div>
         </div>
-    </div>
+    </form>
+
+
 </body>
 </html>
