@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const {mongoose} = require('./db/mongoose');
+// const {mongoose} = require('./db/mongoose');
+const methodOverride = require('method-override');
 
 var app = express();
 
@@ -19,12 +20,15 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
-app.listen(port, () => {console.log("Server is running...")};);
+app.listen(port, () => {console.log(`Server is running at ${port}`)});
 
 
 app.get('/',(req,res) => {
-    res.render('pages/index', {
+    res.sendFile(__dirname + '/views/home.html');
+});
 
-    })
-})
+// Depends on the course data structure
+app.get('/catalog', (req,res) => {
+
+});
 
