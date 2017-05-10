@@ -54,7 +54,7 @@ request(option).then(res => {
 
     courseRender = res;
 
-    // console.dir(courseRender,{depth:null});
+    console.dir(courseRender,{depth:null});
 });
 
 
@@ -94,10 +94,11 @@ app.get('/api/all_courses',(req,res) => {
 
 
 app.get('/search', (req,res) => {
-        var searchQuery = req.body.toLowerCase();
+        console.log(req.query.course_code);
+        var searchQuery = req.query.course_code.toLowerCase();
         var result = courseRender.filter((course) => {
             return course.subject.toLowerCase().search(searchQuery) !== -1 || course.catalog_number.toLowerCase().search(searchQuery) !== -1 || course.description.toLowerCase().search(searchQuery) !== -1 || course.section.toLowerCase().search(searchQuery) !== -1 || course.instructors.toLowerCase().search(searchQuery) !== -1 || (course.subject.toLowerCase()+course.catalog_number.toLowerCase()).search(searchQuery) !== -1 || (course.subject.toLowerCase()+course.catalog_number.toLowerCase().slice(1)).search(searchQuery) !== -1;
         });
-        console.log(res);
-        res.render('home',{courseInfos: res});
+        console.log(result);
+        res.render('search',{courseInfos: result});
 });

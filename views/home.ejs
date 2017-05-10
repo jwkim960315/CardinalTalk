@@ -63,28 +63,11 @@
 
                 </div>
             </form>
-            <br>
 
-            <% if (courseInfos !== undefined) %>
-                <div class="all_courses col-xs-12">
-                    <% courseInfos.forEach((course) => { %>
-                        <li class="list-group-item">
-                            <a href="#"><%= course.subject + course.catalog_number %>: <%=course.description%>
-                                <br>
-                                Section: <%= course.section %>
-                                <br>
-                                Instructors: <%= course.instructors %></a>
-                        </li>
-                    <% }); %>
-                </div>
 
         </div>
 
     <script src="./public/js/home.js"></script>
-
-    <script>
-
-    </script>
 
     </body>
 </html>
